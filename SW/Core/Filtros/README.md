@@ -19,7 +19,4 @@ El fichero tiene como atributos:
 
 ## Pipeline
 
-El *Dataset* es preprocesado para generar un fichero ARFF con los atributos:
-
-  * sentencia
-  * relevante o no relevante [0,1] 
+El *Dataset* es preprocesado para generar un fichero con los atributos: *sentencia* y *relevante*, separados por ;

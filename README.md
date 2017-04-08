@@ -1,4 +1,4 @@
-# MAYA
+# MAYA. Intelligent Domestic Assistant
 
 ## Índice
 
@@ -19,6 +19,23 @@ El contexto en el que se mueve es en el de personas que debido a su minusvalía 
 ## Software
 
 ### Arquitectura
+
+### Herramientas
+
+#### Python 3.X
+
+**macOs**
+> La instalación de XCode trae de serie la versión 2.X de Python. Para evitar problemas con el gestor de paquetes [pip](https://pypi.python.org/pypi/pip), es recomendable utilizar Python 3.X.
+
+La instalación se puede realizar a partir de la descarga del instalador desde la [página oficial de Pyhton](https://www.python.org/downloads/). Para su uso desde consola hay que utilizar el comando `python3`
+
+#### pip
+
+*pip* es el gestor de paquetes que utilizaremos para la descarga y actualización de las librerías necesarias. Viene por defecto con python 3.X. Para actualizarlo:
+
+~~~
+pip3 install --upgrade pip
+~~~
 
 ## Licencia
 
