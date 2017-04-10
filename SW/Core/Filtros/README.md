@@ -34,4 +34,4 @@ El proceso de creación del módulo consiste en una serie de pasos secuenciales 
 
     * *Counting*: es el contado de cada una de las apariciones de cada token en los datos.
 
-    * *Normalizando* y ponderando de los tokens con importancia decreciente.
+    * *Normalizado* y ponderación de los tokens con importancia decreciente.
