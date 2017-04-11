@@ -1,3 +1,4 @@
+# coding=utf-8
 # GeneradorModelos
 #
 # Procesa el dataset con spaCy mediante diferentes algoritmos
@@ -9,6 +10,7 @@
 #
 
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.base import TransformerMixin
 from sklearn.svm import LinearSVC
 from sklearn.pipeline import Pipeline
 
@@ -50,6 +52,18 @@ def limpiaTexto(text):
 
     return text
 
+# A partir del dataset genero dos ficheros para poder tratarlos como iterators a la hora de crear el modelo
+entrenamiento = []
+etiquetaEntrenamiento = []
+
+ficheroDataset = open('dataset_E1.temporal.raw', 'rU')
+
+with open('dataset_E1.temporal.raw', 'rU') as ficheroDataset:
+    for linea in ficheroDataset:
+        lineaPartida = linea.split(";")
+        entrenamiento.append(lineaPartida[0])
+        etiquetaEntrenamiento.append(lineaPartida[1])
+
 # Extracción de texto
 # Con CountVectorizer (obtenido de la libreria sklearn) creo los tokens y realizo el conteo
 vectorizador = CountVectorizer()
@@ -66,5 +80,10 @@ clasificador = LinearSVC();
 pipe = Pipeline([('limpiar', LimpiarTextoTransf()), ('vectorizar', vectorizador), ('clasificar', clasificador)])
 
 # entrenamiento
-# ejecuta todas las transformaciones del pipeline y del último (estimación) 
-pipe.fit()
+# ejecuta todas las transformaciones del pipeline y del último (estimación)
+pipe.fit(entrenamiento,etiquetaEntrenamiento)
+
+test = ["Me cago en la mar", "Maya, pon una canción", "habría que comprar azúcar"]
+preds = pipe.predict(test)
+for (sample, pred) in zip(test, preds):
+    print(sample, ":", pred)

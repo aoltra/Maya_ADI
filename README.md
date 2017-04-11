@@ -39,11 +39,19 @@ pip3 install --upgrade pip
 
 #### spaCy
 
-[spaCy](https://spacy.io/) es una librería desarrollada en Python para realizar Procesamiento de Lenguaje Natural (NLP). Se distribuye con licencia [MIT](https://opensource.org/licenses/MIT).
+[spaCy](https://spacy.io/) es una librería desarrollada en Python para realizar Procesamiento de Lenguaje Natural (NLP). Se distribuye con licencia [MIT](https://opensource.org/licenses/MIT). Para instalarla:
+
+~~~
+pip3 install -U spacy
+~~~
 
 #### scikit-learn
 
-[Scikit-learn](http://scikit-learn.org/stable/) es la principal librería que existe para trabajar con Machine Learning, incluye la implementación de un gran número de algoritmos de aprendizaje. La podemos utilizar para clasificaciones, extraccion de características, regresiones, agrupaciones, reducción de dimensiones, selección de modelos, o preprocesamiento[\*](http://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/#Scikit-Learn). Se distribuye con licencia [BSD](https://www.freebsd.org/copyright/freebsd-license.html).
+[Scikit-learn](http://scikit-learn.org/stable/) es la principal librería que existe para trabajar con Machine Learning, incluye la implementación de un gran número de algoritmos de aprendizaje. La podemos utilizar para clasificaciones, extraccion de características, regresiones, agrupaciones, reducción de dimensiones, selección de modelos, o preprocesamiento[\*](http://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/#Scikit-Learn). Se distribuye con licencia [BSD](https://www.freebsd.org/copyright/freebsd-license.html). Para instalarla:
+
+~~~
+pip3 install -U sklearn
+~~~
 
 ## Licencia
 
