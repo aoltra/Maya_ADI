@@ -13,6 +13,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.base import TransformerMixin
 from sklearn.svm import LinearSVC
 from sklearn.pipeline import Pipeline
+from sklearn.metrics import accuracy_score
 
 # Cada paso del pipeline necesita ser un objeto con la función transform (trasformación), salvo el último que
 # obligatoriamamete ha de tener la función fit (estimación)
@@ -45,12 +46,40 @@ class LimpiarTextoTransf(TransformerMixin):
 def limpiaTexto(text):
 
     # Elimino signos de puntuación
-    text = text.replace("?", "").replace("¿", "").replace(",", "").replace(";", "").replace(":", "")
+    text = text.replace("?", "").replace("¿", "").replace(",", "").replace(";", "").replace(":", "").replace("Maya","")
 
     # todo a minúsculas
     text = text.lower()
 
     return text
+
+
+
+
+
+
+def printNMostInformative(vectorizer, clf, N):
+    """Prints features with the highest coefficient values, per class"""
+
+    print ("------------------------",end="")
+    print ("COEFICIENTES IMPORTANTES",end="")
+    print ("------------------------")
+    feature_names = vectorizer.get_feature_names()
+    coefs_with_fns = sorted(zip(clf.coef_[0], feature_names))
+    topClass0 = coefs_with_fns[:N]
+    topClass1 = coefs_with_fns[:-(N + 1):-1]
+    print("NO Relevantes: ")
+    for feat in topClass0:
+        print(feat)
+    print("Relevantes")
+    for feat in topClass1:
+        print(feat)
+
+
+
+
+
+
 
 # A partir del dataset genero dos ficheros para poder tratarlos como iterators a la hora de crear el modelo
 entrenamiento = []
@@ -62,7 +91,7 @@ with open('dataset_E1.temporal.raw', 'rU') as ficheroDataset:
     for linea in ficheroDataset:
         lineaPartida = linea.split(";")
         entrenamiento.append(lineaPartida[0])
-        etiquetaEntrenamiento.append(lineaPartida[1])
+        etiquetaEntrenamiento.append(lineaPartida[1].replace("\n",""))
 
 # Extracción de texto
 # Con CountVectorizer (obtenido de la libreria sklearn) creo los tokens y realizo el conteo
@@ -83,7 +112,17 @@ pipe = Pipeline([('limpiar', LimpiarTextoTransf()), ('vectorizar', vectorizador)
 # ejecuta todas las transformaciones del pipeline y del último (estimación)
 pipe.fit(entrenamiento,etiquetaEntrenamiento)
 
+# pruebas para clasificar
 test = ["Me cago en la mar", "Maya, pon una canción", "habría que comprar azúcar"]
+etiquetasTest= ["0", "0", "1"]
 preds = pipe.predict(test)
-for (sample, pred) in zip(test, preds):
-    print(sample, ":", pred)
+
+for (sample, pred, etiqueta) in zip(test, preds, etiquetasTest):
+    if pred != etiqueta:
+        print('\x1b[0;31;40m' + sample + ": P(" + pred + ') != E(' + etiqueta + ')\x1b[0m')
+    else:
+        print('\x1b[0;32;40m' + sample + ": P(" + pred + ') == E(' + etiqueta + ')\x1b[0m')
+
+print("\nPrecisión:", accuracy_score(etiquetasTest, preds),"\n")
+
+printNMostInformative(vectorizador, clasificador, 10)
