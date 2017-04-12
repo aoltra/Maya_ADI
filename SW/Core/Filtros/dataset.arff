@@ -45,6 +45,7 @@
 "Siempre creo que estoy en mi tierra",0
 "Si este perno me resiste un poco más, lo haré saltar de un martillazo",0
 "Estaba verdaderamente irritado",0
+"Me gusta el efecto del cuadro en el pasillo",0
 "Pero el arbusto cesó pronto de crecer y comenzó a echar su flor",0
 "Todos aquellos trabajos le parecieron extremadamente duros",0
 "No hay la menor duda de que las personas mayores son muy extrañas",0
@@ -54,6 +55,8 @@
 "Lo esencial es invisible para los ojo",0
 "Este el paisaje más hermoso del mundo",0
 "Esto no puede salir bien",0
+"Me parece que este licor tiene efectos secundarios",0
+"¿Has comprobado que el cajón esté cerrado?",0
 %
 % PROTOCOLO
 %
@@ -109,6 +112,7 @@
 "Maya pon la alarma un cuarto más tarde",4
 "Maya pon la alarma un cuarto de hora más pronto",4
 "Maya pon la alarma un cuarto antes",4
+"Me quiero despertar a las 10",4
 %%%% medicacion %%%%
 Maya ¿qué pastillas me tengo que tomar hoy?
 %

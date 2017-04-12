@@ -89,7 +89,7 @@ with open('dataset_E1.temporal.raw', 'rU') as ficheroDataset:
 
 # Extracción de texto
 # Con CountVectorizer (obtenido de la libreria sklearn) creo los tokens y realizo el conteo
-vectorizador = CountVectorizer()
+vectorizador = CountVectorizer(ngram_range=(1,1))
 
 # Algoritmo Clasificador
 clasificador = LinearSVC();
