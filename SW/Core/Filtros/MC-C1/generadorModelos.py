@@ -53,19 +53,18 @@ def limpiaTexto(text):
 
     return text
 
+# Imprime las propiedades de cada una de las clases en orden decreciente
+# N: número de propiedades a mostrar
+def imprimeCoeficientesPropiedades(vectorizador, clf, N):
+    """
+    Imprime las propiedades de cada una de las clases en orden decreciente
+    """
 
-
-
-
-
-def printNMostInformative(vectorizer, clf, N):
-    """Prints features with the highest coefficient values, per class"""
-
-    print ("------------------------",end="")
-    print ("COEFICIENTES IMPORTANTES",end="")
-    print ("------------------------")
-    feature_names = vectorizer.get_feature_names()
-    coefs_with_fns = sorted(zip(clf.coef_[0], feature_names))
+    print ("------------------------------------")
+    print ("COEFICIENTES PROPIEDADES IMPORTANTES")
+    print ("------------------------------------")
+    nombrePropiedades = vectorizador.get_feature_names()
+    coefs_with_fns = sorted(zip(clf.coef_[0], nombrePropiedades))
     topClass0 = coefs_with_fns[:N]
     topClass1 = coefs_with_fns[:-(N + 1):-1]
     print("NO Relevantes: ")
@@ -74,11 +73,6 @@ def printNMostInformative(vectorizer, clf, N):
     print("Relevantes")
     for feat in topClass1:
         print(feat)
-
-
-
-
-
 
 
 # A partir del dataset genero dos ficheros para poder tratarlos como iterators a la hora de crear el modelo
@@ -113,8 +107,12 @@ pipe = Pipeline([('limpiar', LimpiarTextoTransf()), ('vectorizar', vectorizador)
 pipe.fit(entrenamiento,etiquetaEntrenamiento)
 
 # pruebas para clasificar
-test = ["Me cago en la mar", "Maya, pon una canción", "habría que comprar azúcar"]
-etiquetasTest= ["0", "0", "1"]
+test = ["¿Está la ventana abierta?", "Maya, las mañanas son muy duras",
+    "Habría que comprar azúcar", "Tengo que trabajar mucho",
+    "¿a qué hora está puesto el despertador?", "apunta media sandia", "¿Esta tarde va a hacer sol?",
+    "Son los efectos colaterales", "Añade chocolate a la lista de la compra", "Esto no va",
+    "¿Has cerrado la puerta?"]
+etiquetasTest= ["0", "0", "1", "0", "1", "1", "1", "0", "1", "0", "0"]
 preds = pipe.predict(test)
 
 for (sample, pred, etiqueta) in zip(test, preds, etiquetasTest):
@@ -125,4 +123,4 @@ for (sample, pred, etiqueta) in zip(test, preds, etiquetasTest):
 
 print("\nPrecisión:", accuracy_score(etiquetasTest, preds),"\n")
 
-printNMostInformative(vectorizador, clasificador, 10)
+imprimeCoeficientesPropiedades(vectorizador, clasificador, 10)
