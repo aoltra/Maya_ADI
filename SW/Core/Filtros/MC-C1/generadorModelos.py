@@ -11,14 +11,13 @@
 
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.base import TransformerMixin
-from sklearn import svm  #LinearSVC
+from sklearn import svm
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score
-#from nltk.corpus import stopwords
-#from spacy.es.stop_words import STOP_WORDS as spanish_stop_words_spacy
-# al no haber modelo es mejor realizar la carga con el import, no con load
-from spacy.es import Spanish
 
+# al no haber modelo (sólo tokeniza, y tiene stop words) es mejor realizar la carga con el
+# import, no con load
+from spacy.es import Spanish
 
 # Cada paso del pipeline necesita ser un objeto con la función transform (trasformación), salvo
 # el último que obligatoriamamete ha de tener la función fit (estimación)
@@ -61,39 +60,6 @@ def limpiaTexto(text):
 
     return text
 
-# Funcion de obtención de tokens personalizada
-def tokenizeTexto(sample):
-
-    # Obtención de los tokens
-    tokens = nlp(sample)
-
-    # lematización. Proceso lingüístico que consiste en, dada una forma flexionada (es decir, en
-    # plural, en femenino, conjugada, etc), hallar el lema correspondiente. El lema es la forma
-    # que por convenio se acepta como representante de todas las formas flexionadas de una misma
-    # palabra (la palabra que nos encontraríamos como entrada en un diccionario tradicional:
-    # singular para sustantivos, masculino singular para adjetivos, infinitivo para verbos.
-    # lemmas = []
-    #for tok in tokens:
-     #   lemmas.append(tok.lemma_.lower().strip() if tok.lemma_ != "-PRON-" else tok.lower_)
-   # tokens = lemmas
-
-    # Se eliminan las palabras vacias o stop words
-    tokens = [tok for tok in tokens if tok not in STOPLIST]
-
-    # # stoplist symbols
-    # tokens = [tok for tok in tokens if tok not in SYMBOLS]
-    #
-    # # remove large strings of whitespace
-    # while "" in tokens:
-    #     tokens.remove("")
-    #while " " in tokens:
-    #    tokens.remove(" ")
-    # while "\n" in tokens:
-    #     tokens.remove("\n")
-    # # while "\n\n" in tokens:
-    #     tokens.remove("\n\n")
-
-    return tokens
 
 
 # Imprime las propiedades de cada una de las clases en orden decreciente
@@ -107,13 +73,13 @@ def imprimeCoeficientesPropiedades(vectorizador, clf, N):
     print("COEFICIENTES PROPIEDADES IMPORTANTES")
     print("------------------------------------")
     nombrePropiedades = vectorizador.get_feature_names()
-    coefs_with_fns = sorted(zip(clf.coef_.data, nombrePropiedades))
-    topClass0 = coefs_with_fns[:N]
-    topClass1 = coefs_with_fns[:-(N + 1):-1]
-    print("\nNO RELEVANTES\n-------------")
+    coefs_con_propiedades = sorted(zip(clf.coef_.data, nombrePropiedades))
+    topClass0 = coefs_con_propiedades[:N]
+    topClass1 = coefs_con_propiedades[:-(N + 1):-1]
+    print("\nSENTENCIAS NO RELEVANTES\n------------------------")
     for feat in topClass0:
-        print(feat[0],feat[1])
-    print("Relevantes")
+        print(feat)
+    print("\nSENTENCIAS RELEVANTES\n----------------------")
     for feat in topClass1:
         print(feat)
 
@@ -123,9 +89,6 @@ def imprimeCoeficientesPropiedades(vectorizador, clf, N):
 # Como a priori no aportan significado se eliminan de la frases
 # Se contruye a partir de la lista de palabras vacias de ntlk más de la spaCy
 STOPLIST = Spanish.Defaults.stop_words
-#spanish_stop_words_spacy
-
-nlp = Spanish()
 
 # A partir del dataset genero dos ficheros para poder tratarlos como iterators
 # a la hora de crear el modelo
@@ -147,13 +110,15 @@ with open('dataset_E1.temporal.raw', 'rU') as ficheroDataset:
 # El tokenizador incluido no tiene en cuenta ningun tipo de análisis semántico, se puede implementar
 # en un futuro creando una funcion que procesaria con spaCy cada entrada nlp(sample)
 vectorizador = CountVectorizer(stop_words=STOPLIST, ngram_range=(1, 1))
-#TfidfVectorizer
+# TfidfVectorizer evita estadisiticamente toknes que se repitan mucho. Por ahora no aporta mejoras
+
 # Algoritmo clasificador
-clasificador = svm.SVC(kernel='rbf', gamma=0.7, C=1) #SVC(kernel='linear', C=1)
-#svm.SVC(kernel='rbf', gamma=0.7, C=1)
-#poly_svc = svm.SVC(kernel='poly', degree=3, C=1)
-#svm.SVC(kernel='linear', C=1)
-#svm.LinearSVC()
+clasificador = svm.SVC(kernel='linear', C=1)
+# Otras opciones
+# SVC(kernel='rbf', gamma=0.7, C=1)
+# SVC(kernel='poly', degree=3, C=1)
+# SVC(kernel='linear', C=1)
+# LinearSVC(C=1)
 
 # Creación de la secuencia de procesos para la creación del modelo.
 # Se define una cadena de pares (nombre, objetos transformacion)
@@ -194,20 +159,19 @@ print("\nPrecisión:", accuracy_score(etiquetasTest, preds),"\n")
 imprimeCoeficientesPropiedades(vectorizador, clasificador, 20)
 
 
-# print("----------------------------------------------------------------------------------------------")
-# print("The original data as it appeared to the classifier after tokenizing, lemmatizing, stoplisting, etc")
-# # let's see what the pipeline was transforming the data into
-# pipe = Pipeline([('cleanText', LimpiarTextoTransf()), ('vectorizer', vectorizador)])
-# transform = pipe.fit_transform(entrenamiento,etiquetaEntrenamiento)
+print("--------------------------------------------------------------------------------------------")
+print("Datos que llegan al clasificador después de tokenizar y quitar palabras vacias")
 
-# # get the features that the vectorizer learned (its vocabulary)
-# vocab = vectorizador.get_feature_names()
+pipe = Pipeline([('cleanText', LimpiarTextoTransf()), ('vectorizer', vectorizador)])
+transform = pipe.fit_transform(entrenamiento,etiquetaEntrenamiento)
 
-# # the values from the vectorizer transformed data (each item is a row,column index with value as # times occuring in the sample, stored as a sparse matrix)
-# for i in range(len(entrenamiento)):
-#     s = ""
-#     indexIntoVocab = transform.indices[transform.indptr[i]:transform.indptr[i+1]]
-#     numOccurences = transform.data[transform.indptr[i]:transform.indptr[i+1]]
-#     for idx, num in zip(indexIntoVocab, numOccurences):
-#         s += str((vocab[idx], num))
-#     print("Muestra {}: {}".format(i, s))
+# vocabulario
+vocab = vectorizador.get_feature_names()
+
+for i in range(len(entrenamiento)):
+     s = ""
+     idxEnVocabulario = transform.indices[transform.indptr[i]:transform.indptr[i+1]]
+     numOcurrencias = transform.data[transform.indptr[i]:transform.indptr[i+1]]
+     for idx, num in zip(idxEnVocabulario, numOcurrencias):
+         s += str((vocab[idx], num))
+         print("Muestra {}: {}".format(i, s))
