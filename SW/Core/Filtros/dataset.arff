@@ -1,7 +1,7 @@
 % Dataset Maya IDA - Core para clasificadores
 %
-%      (a) Autor: Alfredo Oltra
-%      (c) Fecha: Abril, 2017
+%      Autor: Alfredo Oltra
+%      Fecha: Abril, 2017
 %
 @RELATION iris
 
@@ -57,6 +57,13 @@
 "Esto no puede salir bien",0
 "Me parece que este licor tiene efectos secundarios",0
 "¿Has comprobado que el cajón esté cerrado?",0
+"A veces las amapolas huelen raro",0
+"Las abejas defienden bien su panal",0
+"Las entradas del cine están muy caras",0
+"Ello se debe a la privilegiada situación estratégica en un cruce de dos vías de comunicación",0
+"Quiero comer paella",0
+"Me apetece beber vino",0
+"Me comería un bocadillo",0
 %
 % PROTOCOLO
 %
@@ -67,6 +74,14 @@
 "Maya, ¿Qué hora es?", 1
 "¿Qué tiempo hará mañana?",1
 "¿Va a llover esta tarde?",1
+"¿Qué tiempo va a hacer esta noche?",1
+"¿Hará sol mañana?",1
+"Me gustaría saber que tiempo hará mañana",1
+"Ya sabes el tiempo que hará en Semana Santa",1
+"¿Va a llover?",1
+"¿Va a hacer sol?",1
+"¿Cómo va todo?",1
+"¿Sabes cuando es el cumpleaños de Pepe",1
 %
 % COMPRA
 %
@@ -74,11 +89,12 @@
 "Maya apunta pan",2
 "Maya apunta dos barras de pan",2
 "Maya no hay pan, apúntalo",2
-"Maya no hay pan",2
+"Maya no hay sal",2
 "Maya, a ver, que no hay pan, apúntalo",2
 "Maya falta pan",2
 "Maya compra pan",2
-"Maya hay que comprar pan",2
+"Maya compra un kilo de garbanzos",2
+"Maya hay que comprar un bote de aceitunas",2
 "Maya hay que comprar pan, huevos, aceite de oliva virgen y galletas",2
 "Maya apunta en la lista de la compra aceite de oliva",2
 "Maya apunta en la lista de la compra atún",2
@@ -92,7 +108,7 @@
 % ASISTENTE
 %
 %%%% alarmas %%%%
-"Maya avísame en 10 minutos",4
+"Maya avísame en diez minutos",4
 "Maya cambia la hora de la alarma a la diez",4
 "Maya pon la alarma a las diez",4
 "Maya ¿a qué hora está puesta la alarma?",4
@@ -112,9 +128,10 @@
 "Maya pon la alarma un cuarto más tarde",4
 "Maya pon la alarma un cuarto de hora más pronto",4
 "Maya pon la alarma un cuarto antes",4
-"Me quiero despertar a las 10",4
+"Me quiero despertar a las diez",4
 %%%% medicacion %%%%
 Maya ¿qué pastillas me tengo que tomar hoy?
+Maya, recuerdame que me tome las pastillas esta noche
 %
 % TELEFONIA
 %
@@ -122,3 +139,6 @@ Maya ¿qué pastillas me tengo que tomar hoy?
 "Maya ¿quién ha llamado?"",3
 "Maya ¿quién ha llamado antes?"",3
 "Maya llama a mi hermana",3
+"Maya quiero hablar con mi hermana",3
+"Maya quiero hablar con Salvador",3
+"Maya quiero hablar con Amparo",3
