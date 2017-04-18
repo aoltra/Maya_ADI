@@ -9,11 +9,17 @@
 # Fecha: 9/4/2017
 #
 
+"""
+Procesa el dataset con spaCy mediante diferentes algoritmos
+"""
+
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.base import TransformerMixin
 from sklearn import svm
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score
+
+from sklearn.externals import joblib
 
 # al no haber modelo (sólo tokeniza, y tiene stop words) es mejor realizar la carga con el
 # import, no con load
@@ -128,12 +134,16 @@ clasificador = svm.SVC(kernel='linear', C=1)
 # todas las transformaciones han de implementar el método transform,
 # salvo la última que en vez de transform necesita el método fit
 # A la última se le llama estimación
+
+nlp = Spanish()
 pipe = Pipeline([('limpiar', LimpiarTextoTransf()), ('vectorizar', vectorizador),
                  ('clasificar', clasificador)])
 
 # entrenamiento
 # ajusta el modelo ejecutando todas las transformaciones del pipeline y la estimación final
 pipe.fit(entrenamiento, etiquetaEntrenamiento)
+
+joblib.dump(pipe, 'MCC1.mym')
 
 # pruebas para clasificar
 test = ["¿Está la ventana abierta?", "Maya, las mañanas son muy duras",
@@ -156,7 +166,7 @@ for (sample, pred, etiqueta) in zip(test, preds, etiquetasTest):
 
 print("\nPrecisión:", accuracy_score(etiquetasTest, preds),"\n")
 
-imprimeCoeficientesPropiedades(vectorizador, clasificador, 20)
+imprimeCoeficientesPropiedades(vectorizador, clasificador, 15)
 
 
 print("--------------------------------------------------------------------------------------------")
