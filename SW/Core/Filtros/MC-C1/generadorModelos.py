@@ -19,54 +19,13 @@ from sklearn import svm
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score
 
+# pylint: disable=unused-import
+from LimpiarTextoTransf import LimpiarTextoTransf
 from sklearn.externals import joblib
 
 # al no haber modelo (sólo tokeniza, y tiene stop words) es mejor realizar la carga con el
 # import, no con load
 from spacy.es import Spanish
-
-# Cada paso del pipeline necesita ser un objeto con la función transform (trasformación), salvo
-# el último que obligatoriamamete ha de tener la función fit (estimación)
-# Hereda de la clase TransformerMixin que implementa el método fit_transform, que primero
-# hace un fit y luego lo transforma, luego es necesario definir esas dos funciones
-class LimpiarTextoTransf(TransformerMixin):
-    ## documentación
-    """
-    Transformación que limpia el texto
-    """
-
-    # se encarga de realizar un ajuste, de realizar un trabajo, en los datos.
-    # Aunque se puede realizar en las transformaciones, tiene sentido en la estimación
-    # X son los datos a entrenar e Y los correspondientes valores de su entrenamiento
-    def fit(self, X, y=None, **fit_params):
-        return self
-
-    # transforma los datos a otro formato o los simplifica
-    # transform_params es un número indeterminado de tuplas
-    def transform(self, X, **transform_params):
-        return [limpiaTexto(text) for text in X]
-
-    # obtiene los parámetros de esta transformación a partir de la lista
-    # de parámetros de la pipeline
-    # Esta transformación no permite parámetros
-    def get_params(self, deep=True):
-        return {}
-
-
-# Limpia el texto antes de ser enviado a Tokenizing
-def limpiaTexto(text):
-
-    # todo a minúsculas
-    text = text.lower()
-
-    # Elimino signos de puntuación
-    text = text.replace("?", "").replace("¿", "").replace(",", "")
-    text = text.replace(";", "").replace(":", "").replace("maya", "")
-    text = text.strip()
-
-    return text
-
-
 
 # Imprime las propiedades de cada una de las clases en orden decreciente
 # N: número de propiedades a mostrar
