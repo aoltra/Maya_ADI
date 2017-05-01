@@ -1,0 +1,3 @@
+[submodule "SW/vendors/aoltra/spacy-dev-resources"]
+	path = SW/vendors/aoltra/spacy-dev-resources
+	url = https://github.com/aoltra/spacy-dev-resources.git

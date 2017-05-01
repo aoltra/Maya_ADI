@@ -1,0 +1,43 @@
+#########
+# Maya
+#########
+*.kk/
+
+#########
+# Python
+#########
+__pycache__/
+
+##########
+# LOGS   #
+##########
+*.log
+
+######################
+# GENERADOS POR OS   #
+######################
+# Windows
+#########
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+ 
+######### 
+# Linux
+#########
+.*
+!.gitignore
+!.htaccess
+*~
+ 
+###########
+# Mac OS X
+###########
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes

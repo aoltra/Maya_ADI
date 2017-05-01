@@ -1,0 +1,116 @@
+Hola Maya
+Hola
+Maya ¿estás ahí?
+¿Qué hora es?
+Maya, ¿Qué hora es?
+¿Qué tiempo hará mañana?
+¿Va a llover esta tarde?
+¿Qué tiempo va a hacer esta noche?
+¿Hará sol mañana?
+Me gustaría saber que tiempo hará mañana
+¿Ya sabes el tiempo que hará en Semana Santa?
+¿Va a llover?
+¿Va a hacer sol?
+¿Cómo va todo?
+Avísame si mañana llueve
+¿A qué hora amanecerá mañana?
+Maya, dime el tiempo que hará mañana en Gandía
+Maya apunta en la lista de la compra pan
+Maya apunta pan
+Maya apunta vinagre
+Maya apunta aceite de oliva
+Maya apunta aceite de girasol
+Maya apunta dos barras de pan
+Maya no hay pan, apúntalo
+Maya no hay sal
+Maya, a ver, que no hay pan, apúntalo
+Maya falta pan
+Maya compra pan
+Maya compra un kilo de garbanzos
+Maya hay que comprar un bote de aceitunas
+Maya hay que comprar un bote de aceitunas negras
+Maya hay que comprar queso rallado
+Maya, no hay vinagre de módena, apúntalo
+Maya, no hay vinagre, apúntalo
+Maya hay que comprar pan, huevos, aceite de oliva virgen y galletas
+Maya apunta en la lista de la compra aceite de oliva
+Maya apunta en la lista de la compra atún
+Maya apunta en la lista de la compra una lechuga
+Maya apunta en la lista de la compra queso gouda
+Maya hay que comprar un kilo de arroz
+Maya hay que comprar un litro de leche
+Maya hay que comprar azucar, cereales, galletas y magadalenas
+Maya hay que comprar un kilo azucar, yogures blancos y emmental
+Maya apunta en la lista un kilo azucar moreno, yogures naturales y un pimiento verde
+Maya apunta en la lista un kilo macarrones, rosquilletas y ciruelas
+Maya apunta también pan
+Maya apunta también emmental
+Maya apunta también lechuga y calabacines
+Maya apunta también dos pepinos, tomates, calabacín y coliflor
+Maya apunta también queso gouda
+Maya ¿has apuntado el pan?
+Maya haz la compra
+Maya, ¿has apuntado las galletas?
+Maya avísame en diez minutos
+Maya, cuando pasen 15 minutos me avisas para cerrar el fuego
+Maya, en media hora me avisas para hablar por teléfono porque ahora no estarán
+Maya avísame en quince minutos
+Maya avísame en cinco minutos
+Maya cambia la hora de la alarma a la diez
+Maya pon la alarma a las diez
+Maya ¿a qué hora está puesta la alarma?
+Maya ¿la alarma a qué hora está puesta?
+Maya cancela la alarma que mañana quiero dormir
+Maya quita la alarma
+Maya ¿está puesta la alarma?
+Maya pon la alarma media hora más tarde
+Maya pon la alarma media hora más pronto
+Maya pon la alarma media hora antes
+Maya pon la alarma una hora más tarde
+Maya pon la alarma una hora más pronto
+Maya pon la alarma una hora antes
+Maya pon la alarma diez minutos más tarde
+Maya pon la alarma diez minutos más pronto
+Maya pon la alarma diez minutos antes
+Maya pon la alarma un cuarto más tarde
+Maya pon la alarma un cuarto de hora más pronto
+Maya pon la alarma un cuarto antes
+Maya, me quiero despertar a las diez
+Maya, mañana me despiertas a las diez
+Maya, despiertame a las nueve y media
+Maya, mañana me despiertas a las nueve y veinte
+Maya ¿qué pastillas me tengo que tomar hoy?
+Maya recuerdame que me tome las pastillas esta noche
+Maya, avísame a partir de las 10 que tengo que tomarme las pastillas
+Maya, ¿Sabes cuando es el cumpleaños de Pepe
+Maya, es hoy el cumpleaños de Joan
+Maya, ¿de quién es el cumpleaños hoy?
+Maya, ¿de quién es el cumple hoy?
+Maya, ¿hoy es el cumpleaños de alguien?
+Maya, recuérdame cuando es el cumple de la tía
+Maya, ¿me puedes avisar cuando sea el cumpleaños de mi amiga Marisa?
+Maya, ¿hoy es el cumpleaños de alguién?
+Maya, ¿hoy es el aniversario de alguién?
+Maya, dime los cumpleaños de este mes
+Maya, recuerdame los cumpleaños de este mes
+Maya, recuerdame las fechas importantes de este mes
+Maya, ¿tengo citas para hoy?
+Maya, ¿qué citas tengo hoy?
+Maya, ¿qué citas tengo esta semana?
+Maya llama a mi hijo
+Maya llama a mi hijo al móvil
+Maya ¿quién ha llamado?"
+Maya ¿quién ha llamado antes?"
+Maya llama a mi hermana
+Maya llama por teléfono a mi hermana
+Maya llama por teléfono a mi cuñado
+Maya llama por teléfono a mi Tere
+Maya llama por teléfono a mi amiga Tere
+Maya llama por teléfono a mi amiga Elisa
+Maya llama a mi hermana Amparo
+Maya llama a Mari
+Maya quiero hablar con mi hermana
+Maya quiero hablar con Salvador
+Maya quiero hablar con Amparo
+Maya quiero hablar por teléfono con Amparo
+Maya quiero hablar con mi cuñado

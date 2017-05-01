@@ -10,24 +10,31 @@
 """
 Ejecuta el filtro 1 (MCC1): relevante/no relevante
 """
-
 import sys
 from sklearn.externals import joblib
 # pylint: disable=unused-import
 from LimpiarTextoTransf import LimpiarTextoTransf
 
-if len(sys.argv) != 2:
-    print("No existe una definición clara del texto a procesar. Tal vez falten comillas")
-    sys.exit()
+def main():
+    """
+    Función de arranque del script
+    """
 
-texto = []
-texto.append(sys.argv[1])
+    if len(sys.argv) != 2:
+        print("No existe una definición clara del texto a procesar. Tal vez falten comillas")
+        sys.exit()
 
-PIPELINE = joblib.load('MCC1.mym')
+    texto = []
+    texto.append(sys.argv[1])
 
-PREDICCION = PIPELINE.predict(texto)
+    pipeline = joblib.load('MCC1.mym')
 
-if PREDICCION[0] == "0":
-    print('No relevante')
-else:
-    print('Relevante')
+    prediccion = pipeline.predict(texto)
+
+    if prediccion[0] == "0":
+        print('No relevante')
+    else:
+        print('Relevante')
+
+if __name__ == "__main__":
+    main()

@@ -47,11 +47,28 @@ pip3 install -U spacy
 
 #### scikit-learn
 
-[Scikit-learn](http://scikit-learn.org/stable/) es la principal librería que existe para trabajar con Machine Learning, incluye la implementación de un gran número de algoritmos de aprendizaje. La podemos utilizar para clasificaciones, extraccion de características, regresiones, agrupaciones, reducción de dimensiones, selección de modelos, o preprocesamiento[\*](http://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/#Scikit-Learn). Se distribuye con licencia [BSD](https://www.freebsd.org/copyright/freebsd-license.html). Para instalarla:
+[Scikit-learn](http://scikit-learn.org/stable/) es la principal librería que existe para trabajar con Machine Learning, incluye la implementación de un gran número de algoritmos de aprendizaje. La podemos utilizar para clasificaciones, extracción de características, regresiones, agrupaciones, reducción de dimensiones, selección de modelos, o preprocesamiento[\*](http://relopezbriega.github.io/blog/2015/10/10/machine-learning-con-python/#Scikit-Learn). Se distribuye con licencia [BSD](https://www.freebsd.org/copyright/freebsd-license.html). Para instalarla:
 
 ~~~
 pip3 install -U sklearn
 ~~~
+
+#### plac
+
+[plac](https://pypi.python.org/pypi/plac) permite el proceso de lineas de comandos de manera (muy) simplificada. 
+
+~~~
+pip3 install -U plac
+~~~
+
+#### jolib
+
+[joblib](https://pypi.python.org/pypi/joblib) permite la ejecución de procesos en modo tubería, de tal manera que el procesamiento es bajo demanda (sólo si los valores de netrada han cambiado) e inspeccionando cuando es conveniente que sean ejecutados en parelelo.
+
+~~~
+pip3 install -U joblib
+~~~
+
 
 ## Licencia
 

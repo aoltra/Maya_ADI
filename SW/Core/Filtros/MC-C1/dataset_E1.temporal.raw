@@ -53,13 +53,18 @@ Maya, ¿Qué hora es?;1
 ¿Qué tiempo va a hacer esta noche?;1
 ¿Hará sol mañana?;1
 Me gustaría saber que tiempo hará mañana;1
-Ya sabes el tiempo que hará en Semana Santa;1
+¿Ya sabes el tiempo que hará en Semana Santa?;1
 ¿Va a llover?;1
 ¿Va a hacer sol?;1
 ¿Cómo va todo?;1
-¿Sabes cuando es el cumpleaños de Pepe;1
+Avísame si mañana llueve;1
+¿A qué hora amanecerá mañana?;1
+Maya, dime el tiempo que hará mañana en Gandía;1
 Maya apunta en la lista de la compra pan;1
 Maya apunta pan;1
+Maya apunta vinagre;1
+Maya apunta aceite de oliva;1
+Maya apunta aceite de girasol;1
 Maya apunta dos barras de pan;1
 Maya no hay pan, apúntalo;1
 Maya no hay sal;1
@@ -68,16 +73,34 @@ Maya falta pan;1
 Maya compra pan;1
 Maya compra un kilo de garbanzos;1
 Maya hay que comprar un bote de aceitunas;1
+Maya hay que comprar un bote de aceitunas negras;1
+Maya hay que comprar queso rallado;1
+Maya, no hay vinagre de módena, apúntalo;1
+Maya, no hay vinagre, apúntalo;1
 Maya hay que comprar pan, huevos, aceite de oliva virgen y galletas;1
 Maya apunta en la lista de la compra aceite de oliva;1
 Maya apunta en la lista de la compra atún;1
 Maya apunta en la lista de la compra una lechuga;1
 Maya apunta en la lista de la compra queso gouda;1
+Maya hay que comprar un kilo de arroz;1
+Maya hay que comprar un litro de leche;1
+Maya hay que comprar azucar, cereales, galletas y magadalenas;1
+Maya hay que comprar un kilo azucar, yogures blancos y emmental;1
+Maya apunta en la lista un kilo azucar moreno, yogures naturales y un pimiento verde;1
+Maya apunta en la lista un kilo macarrones, rosquilletas y ciruelas;1
 Maya apunta también pan;1
+Maya apunta también emmental;1
+Maya apunta también lechuga y calabacines;1
+Maya apunta también dos pepinos, tomates, calabacín y coliflor;1
 Maya apunta también queso gouda;1
 Maya ¿has apuntado el pan?;1
 Maya haz la compra;1
+Maya, ¿has apuntado las galletas?;1
 Maya avísame en diez minutos;1
+Maya, cuando pasen 15 minutos me avisas para cerrar el fuego;1
+Maya, en media hora me avisas para hablar por teléfono porque ahora no estarán;1
+Maya avísame en quince minutos;1
+Maya avísame en cinco minutos;1
 Maya cambia la hora de la alarma a la diez;1
 Maya pon la alarma a las diez;1
 Maya ¿a qué hora está puesta la alarma?;1
@@ -97,11 +120,42 @@ Maya pon la alarma diez minutos antes;1
 Maya pon la alarma un cuarto más tarde;1
 Maya pon la alarma un cuarto de hora más pronto;1
 Maya pon la alarma un cuarto antes;1
-Me quiero despertar a las diez;1
+Maya, me quiero despertar a las diez;1
+Maya, mañana me despiertas a las diez;1
+Maya, despiertame a las nueve y media;1
+Maya, mañana me despiertas a las nueve y veinte;1
+Maya ¿qué pastillas me tengo que tomar hoy?;1
+Maya recuerdame que me tome las pastillas esta noche;1
+Maya, avísame a partir de las 10 que tengo que tomarme las pastillas;1
+Maya, ¿Sabes cuando es el cumpleaños de Pepe;1
+Maya, es hoy el cumpleaños de Joan;1
+Maya, ¿de quién es el cumpleaños hoy?;1
+Maya, ¿de quién es el cumple hoy?;1
+Maya, ¿hoy es el cumpleaños de alguien?;1
+Maya, recuérdame cuando es el cumple de la tía;1
+Maya, ¿me puedes avisar cuando sea el cumpleaños de mi amiga Marisa?;1
+Maya, ¿hoy es el cumpleaños de alguién?;1
+Maya, ¿hoy es el aniversario de alguién?;1
+Maya, dime los cumpleaños de este mes;1
+Maya, recuerdame los cumpleaños de este mes;1
+Maya, recuerdame las fechas importantes de este mes;1
+Maya, ¿tengo citas para hoy?;1
+Maya, ¿qué citas tengo hoy?;1
+Maya, ¿qué citas tengo esta semana?;1
 Maya llama a mi hijo;1
+Maya llama a mi hijo al móvil;1
 Maya ¿quién ha llamado?";1
 Maya ¿quién ha llamado antes?";1
 Maya llama a mi hermana;1
+Maya llama por teléfono a mi hermana;1
+Maya llama por teléfono a mi cuñado;1
+Maya llama por teléfono a mi Tere;1
+Maya llama por teléfono a mi amiga Tere;1
+Maya llama por teléfono a mi amiga Elisa;1
+Maya llama a mi hermana Amparo;1
+Maya llama a Mari;1
 Maya quiero hablar con mi hermana;1
 Maya quiero hablar con Salvador;1
 Maya quiero hablar con Amparo;1
+Maya quiero hablar por teléfono con Amparo;1
+Maya quiero hablar con mi cuñado;1

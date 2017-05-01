@@ -41,7 +41,6 @@ class LimpiarTextoTransf(TransformerMixin):
         transform_params es un número indeterminado de tuplas
         """
         del transform_params
-
         return [limpia_texto(text) for text in X]
 
 

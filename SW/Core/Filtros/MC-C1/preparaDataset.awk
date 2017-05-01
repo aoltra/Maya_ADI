@@ -1,7 +1,7 @@
-# Convierte el conjunto de datos en format ARFF en una lista de instancias
+# Convierte el conjunto de datos en formato ARFF en una lista de instancias
 # sentencia y propiedad relevante (!=0)/no relevante (==0)
 # Ejecución
-#     awk -f preparaDataset.awk ../dataset.arff > dataset_E1.temporal.raw
+#     awk -f preparaDataset.awk ../../modelos/dataset.arff > dataset_E1.temporal.raw
 
 BEGIN {
   data=0;
